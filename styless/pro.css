@@ -4,7 +4,20 @@ body {
   padding: 0;
   background-color: #121212;
   color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
+
+footer {
+  margin-top: auto;
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  
+}
+
 
 .navbar {
   display: flex;
@@ -32,13 +45,7 @@ body {
 
 .nav-links a {
   text-decoration: none;
-<<<<<<< HEAD
   color: #ffffff;
-=======
-
-  color: #ffffff;
-
->>>>>>> d3670f4f435317a6300fa472c00f0f1c4d8d3c4a
   font-weight: bold;
   padding: 5px 10px;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -56,10 +63,8 @@ section {
   color: #ffffff;
 }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> d3670f4f435317a6300fa472c00f0f1c4d8d3c4a
+
 /* Footer */
 
 footer {
