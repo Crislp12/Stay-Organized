@@ -1,0 +1,24 @@
+<div class="d-flex gap-4 my-4">
+    <div class="mb-3 w-25">
+      <label class="form-label" for="shopByTypeSelect">Shop By</label>
+      <select id="shopByTypeSelect" class="form-select">
+        <option value="category">Search By Category</option>
+        <option value="all" selected>View All</option>
+      </select>
+    </div>
+
+    <div class="mb-3 w-25">
+      <label class="form-label" for="categorySelect">Category</label>
+      <select
+        id="categorySelect"
+        class="form-select"
+        onchange="selectCategory();"
+      >
+        <option value="">Select...</option>
+      </select>
+    </div>
+  </div>
+</main>
+<!-- card container  -->
+
+<div class="card-conatiner " id="card-conatiner-id">
