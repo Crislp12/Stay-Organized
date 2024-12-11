@@ -4,49 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add New Todo</title>
-    <link rel="stylesheet" href="styless/pro.css" />
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    
+    <link rel="stylesheet" href="./styless/pro.css" />
+    
   </head>
   <body>
     <h1>Add New Todo</h1>
 
     <form id="newTodoForm">
       <div class="form-group">
-        <label for="userid">User:</label>
+        <label for="userid">User:</label><br />
         <select id="userid" name="userid" required>
           <option value="">Select User</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label for="category">Category:</label>
+        <label for="category">Category:</label><br />
+
         <select id="category" name="category" required>
           <option value="">Select Category</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label for="description">Description:</label>
+        <label for="description">Description:</label><br />
         <textarea id="description" name="description" required></textarea>
       </div>
-
       <div class="form-group">
-        <label for="deadline">Deadline:</label>
-        <input
-          type="text"
-          id="deadline"
-          name="deadline"
-          placeholder="YYYY-MM-DD"
-          required
-        />
+        <label for="deadline">Deadline:</label><br />
+
+        <input type="text" id="deadline" name="deadline" placeholder="YYYY-MM-DD" required />
       </div>
-
+      <br />
       <div class="form-group">
-        <label for="priority">Priority:</label>
+        <label for="priority">Priority:</label><br />
         <select id="priority" name="priority" required>
           <option value="">Select Priority</option>
           <option value="Low">Low</option>
@@ -54,9 +51,9 @@
           <option value="High">High</option>
         </select>
       </div>
+      <br />
       <button type="submit">Add Todo</button>
     </form>
-
     <script src="newtodo.js"></script>
   </body>
 </html>
