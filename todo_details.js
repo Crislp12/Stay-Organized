@@ -15,7 +15,7 @@ async function loadTodoDetails(todoId) {
         const response = await fetch(`http://localhost:8083/api/todos/${todoId}`);
         const todo = await response.json();
 
-        // Display todo details
+        
         document.getElementById('category').textContent = todo.category;
         document.getElementById('description').textContent = todo.description;
         document.getElementById('deadline').textContent = todo.deadline;
@@ -23,13 +23,13 @@ async function loadTodoDetails(todoId) {
 
         const completeBtn = document.getElementById('completeBtn');
         
-        // Disable button if todo is already completed
+        
         if (todo.completed) {
             completeBtn.disabled = true;
             completeBtn.textContent = 'COMPLETED';
         }
 
-        // Add click handler for complete button
+       
         completeBtn.addEventListener('click', () => markCompleted(todoId));
     } catch (error) {
         console.error('Error loading todo details:', error);

@@ -11,7 +11,7 @@ async function loadUsers() {
     const userSelect = document.getElementById("userid");
 
     users.forEach((user) => {
-      // For each user from the API
+      
       const option = document.createElement("option");
       option.value = user.id;
       option.textContent = user.name;
@@ -46,13 +46,12 @@ async function loadCategories() {
   }
 }
 
-// Function to set up the form submission handler
+
 function setupFormSubmission() {
   const form = document.getElementById("newTodoForm");
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    // Create an object with the form data
     const formData = {
       userid: document.getElementById("userid").value,
       category: document.getElementById("category").value,
@@ -73,7 +72,7 @@ function setupFormSubmission() {
       if (response.ok) {
         const newTodo = await response.json();
         alert("Todo added successfully!");
-        // Redirect to todo_details page with the new todo's ID
+        
         window.location.href = `todo_details.html?id=${newTodo.id}`;
       } else {
         alert("Error adding todo");
