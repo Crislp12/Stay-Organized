@@ -39,7 +39,13 @@ function populateUserSelect(users) {
 }
 
 
-function createTaskCard(task) {
+async function createTaskCard(task) {
+  const getUser =  await fetch("http://localhost:8083/api/users");
+  const users = await getUser.json();
+
+  const user = users.find((user)=> user.id === task.userid);
+
+
   const cardCol = document.createElement("div");
   cardCol.className = "col-md-4";
 
@@ -54,7 +60,7 @@ function createTaskCard(task) {
   title.textContent = task.category;
 
   const userInfo = document.createElement("p");
-  userInfo.textContent = `Assigned to: ${task.userid}`;
+  userInfo.textContent = `Assigned to: ${user.name}`;
 
   const description = document.createElement("p");
   description.textContent = `Description: ${task.description}`;
@@ -74,7 +80,6 @@ function createTaskCard(task) {
 
   cardContainer.appendChild(cardCol);
 }
-
 
 function filterTasksByUserAndStatus(tasks, userId, status) {
   let filteredTasks = tasks;
