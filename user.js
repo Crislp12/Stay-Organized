@@ -3,10 +3,6 @@ let filterUsers = document.querySelector("#filterUsers");
 let filterTasks = document.querySelector("#filterTasks");
 let cardContainer = document.querySelector("#card-container");
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e0ec225e3f6ddc2e5909c8003892cd3d9e0902c5
 async function getUsers() {
   try {
     let response = await fetch("http://localhost:8083/api/users");
@@ -18,10 +14,7 @@ async function getUsers() {
   }
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> e0ec225e3f6ddc2e5909c8003892cd3d9e0902c5
 async function getTasks() {
   try {
     let response = await fetch("http://localhost:8083/api/todos");
@@ -103,20 +96,15 @@ function filterTasksByUserAndStatus(tasks, userId, status) {
   return filteredTasks;
 }
 
+// Handle filtering tasks based on user and status
+async function filterAllTasks() {
 
-async function filterTasks() {
   let userId = filterUsers.value;
   let taskStatus = filterTasks.value;
 
   let tasks = await getTasks();
   let filteredTasks = filterTasksByUserAndStatus(tasks, userId, taskStatus);
-<<<<<<< HEAD
-  
 
-=======
-
-  // Clear existing cards and render filtered tasks
->>>>>>> e0ec225e3f6ddc2e5909c8003892cd3d9e0902c5
   cardContainer.innerHTML = "";
   filteredTasks.forEach((task) => createTaskCard(task));
 }
@@ -133,5 +121,5 @@ async function initializePage() {
 
 initializePage();
 
-filterUsers.addEventListener("change", filterTasks);
-filterTasks.addEventListener("change", filterTasks);
+filterUsers.addEventListener("change", filterAllTasks);
+filterTasks.addEventListener("change", filterAllTasks);
