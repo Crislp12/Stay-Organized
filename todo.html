@@ -60,72 +60,31 @@
 
 
     <main class="container mt-4">
-      <h4></h4>
+      <h4>Task List</h4>
       <hr />
-      <div class="d-flex gap-4 my-4">
-        <div class="mb-3 w-25">
-          <label class="form-label" for="shopByTypeSelect">User</label>
-          <select id="shopByTypeSelect" class="form-select">
-            <option value="Task">Search By User</option>
-            <option value="all" selected>View All</option>
+      <div class="row">
+        <!-- Filter by User -->
+        <div class="col-md-6">
+          <label for="filterUsers" class="form-label">Filter by User</label>
+          <select id="filterUsers" class="form-select">
+            <option value="all" selected>All Users</option>
+          </select>
+        </div>
+
+        <!-- Filter by Task  -->
+        <div class="col-md-6">
+          <label for="filterTasks" class="form-label">Filter by Task Status</label>
+          <select id="filterTasks" class="form-select">
+            <option value="all" selected>All Tasks</option>
+            <option value="completed">Completed</option>
+            <option value="not_completed">Not Completed</option>
+            <option value="high_priority">High Priority</option>
           </select>
         </div>
       </div>
+
+      <div class="row mt-4" id="card-container"></div>
     </main>
     <!-- card container  -->
 
     <div class="card-conatiner" id="card-conatiner-id">
-    </div>
-    <script src="user.js"></script>
-
-    <footer>
-      <div class="footer-container">
-        <div class="footer-section">
-          <h3>Information</h3>
-          <ul>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Shipping and Delivery</a></li>
-            <li><a href="#">Returns and Exchanges</a></li>
-            <li><a href="#">Cancellation Policy</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms and Conditions</a></li>
-            <li><a href="#">Sitemap</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h3>More</h3>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Product</a></li>
-            <li><a href="#">Story</a></li>
-            <li><a href="#">Journal</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h3>Account</h3>
-          <ul>
-            <li><a href="#">Main Account</a></li>
-            <li><a href="#">Order History</a></li>
-            <li><a href="#">Wishlist</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h3>Sign Up</h3>
-          <p>
-            Subscribe to learn new skills from Cris and stay informed about our
-            design process and updates.
-          </p>
-          <form>
-            <input type="email" placeholder="Enter your email" required />
-            <button type="submit">Subscribe</button>
-          </form>
-        </div>
-      </div>
-    </footer>
-    
-  </body>
-</html>
