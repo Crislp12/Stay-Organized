@@ -3,7 +3,7 @@ let filterUsers = document.querySelector("#filterUsers");
 let filterTasks = document.querySelector("#filterTasks");
 let cardContainer = document.querySelector("#card-container");
 
-// Fetch users data from API
+
 async function getUsers() {
   try {
     let response = await fetch("http://localhost:8081/api/users");
@@ -15,7 +15,7 @@ async function getUsers() {
   }
 }
 
-// Fetch tasks data from API
+
 async function getTasks() {
   try {
     let response = await fetch("http://localhost:8081/api/tasks");
@@ -27,9 +27,9 @@ async function getTasks() {
   }
 }
 
-// Populate the user dropdown
+
 function populateUserSelect(users) {
-  // Clear existing options
+  
   filterUsers.innerHTML = '<option value="all">View All Users</option>';
   users.forEach((user) => {
     let option = document.createElement("option");
@@ -39,7 +39,7 @@ function populateUserSelect(users) {
   });
 }
 
-// Create a card for each task
+
 function createTaskCard(task) {
   const cardCol = document.createElement("div");
   cardCol.className = "col-md-4";
@@ -76,16 +76,16 @@ function createTaskCard(task) {
   cardContainer.appendChild(cardCol);
 }
 
-// Filter tasks by selected user and task status
+
 function filterTasksByUserAndStatus(tasks, userId, status) {
   let filteredTasks = tasks;
 
-  // Filter by selected user
+ 
   if (userId !== "all") {
     filteredTasks = filteredTasks.filter((task) => task.userid == userId);
   }
 
-  // Filter by task status
+  
   if (status === "completed") {
     filteredTasks = filteredTasks.filter((task) => task.completed);
   } else if (status === "not_completed") {
@@ -97,21 +97,20 @@ function filterTasksByUserAndStatus(tasks, userId, status) {
   return filteredTasks;
 }
 
-// Handle filtering tasks based on user and status
+
 async function filterTasks() {
   let userId = filterUsers.value;
   let taskStatus = filterTasks.value;
 
-  // Fetch tasks data
   let tasks = await getTasks();
   let filteredTasks = filterTasksByUserAndStatus(tasks, userId, taskStatus);
   
-  // Clear existing cards and render filtered tasks
+
   cardContainer.innerHTML = "";
   filteredTasks.forEach((task) => createTaskCard(task));
 }
 
-// Initialize page by fetching users and tasks
+
 async function initializePage() {
   let users = await getUsers();
   populateUserSelect(users);
@@ -120,7 +119,7 @@ async function initializePage() {
   tasks.forEach((task) => createTaskCard(task));
 }
 
-// Initialize the page on load
+
 initializePage();
 
 
