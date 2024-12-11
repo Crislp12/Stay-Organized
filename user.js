@@ -1,12 +1,11 @@
-// Get references to DOM elements
+"use strict";
 let filterUsers = document.querySelector("#filterUsers");
 let filterTasks = document.querySelector("#filterTasks");
 let cardContainer = document.querySelector("#card-container");
 
-// Fetch users data from API
 async function getUsers() {
   try {
-    let response = await fetch("http://localhost:8081/api/users");
+    let response = await fetch("http://localhost:8083/api/users");
     let users = await response.json();
     console.log("users", users);
     return users;
@@ -15,10 +14,9 @@ async function getUsers() {
   }
 }
 
-// Fetch tasks data from API
 async function getTasks() {
   try {
-    let response = await fetch("http://localhost:8081/api/tasks");
+    let response = await fetch("http://localhost:8083/api/todos");
     let tasks = await response.json();
     console.log("tasks", tasks);
     return tasks;
@@ -105,7 +103,7 @@ async function filterTasks() {
   // Fetch tasks data
   let tasks = await getTasks();
   let filteredTasks = filterTasksByUserAndStatus(tasks, userId, taskStatus);
-  
+
   // Clear existing cards and render filtered tasks
   cardContainer.innerHTML = "";
   filteredTasks.forEach((task) => createTaskCard(task));
@@ -122,7 +120,6 @@ async function initializePage() {
 
 // Initialize the page on load
 initializePage();
-
 
 filterUsers.addEventListener("change", filterTasks);
 filterTasks.addEventListener("change", filterTasks);
