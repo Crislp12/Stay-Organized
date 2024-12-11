@@ -63,7 +63,15 @@ section {
   color: #ffffff;
 }
 
-
+.content {
+  margin: 0 auto; 
+  max-width: 70%; 
+  text-align: justify; 
+  line-height: 1.8; 
+  padding: 20px; 
+  border-radius: 8px; 
+  
+}
 
 
 /* Footer */
