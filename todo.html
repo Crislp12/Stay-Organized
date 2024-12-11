@@ -3,38 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task Cards with User Filter</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <title>Task Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="styless/pro.css" />
   </head>
   <body>
     <main class="container mt-4">
-      <h4>Task List</h4>
+      <h4>Task Management</h4>
       <hr />
-      <div class="row">
-        <!-- Filter by User -->
-        <div class="col-md-6">
-          <label for="filterUsers" class="form-label">Filter by User</label>
+      <div class="d-flex gap-4 my-4">
+        <div class="mb-3 w-25">
+          <label class="form-label" for="filterUsers">User</label>
           <select id="filterUsers" class="form-select">
-            <option value="all" selected>All Users</option>
+            <option value="all">View All Users</option>
           </select>
         </div>
-
-        <!-- Filter by Task  -->
-        <div class="col-md-6">
-          <label for="filterTasks" class="form-label">Filter by Task Status</label>
+        <div class="mb-3 w-25">
+          <label class="form-label" for="filterTasks">Task Status</label>
           <select id="filterTasks" class="form-select">
-            <option value="all" selected>All Tasks</option>
+            <option value="all">All Tasks</option>
             <option value="completed">Completed</option>
             <option value="not_completed">Not Completed</option>
             <option value="high_priority">High Priority</option>
           </select>
         </div>
       </div>
-
-      <div class="row mt-4" id="card-container"></div>
+      <div class="row" id="card-container"></div>
     </main>
 
-  
     <script src="user.js"></script>
   </body>
 </html>
