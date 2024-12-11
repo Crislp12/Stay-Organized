@@ -96,7 +96,7 @@ function filterTasksByUserAndStatus(tasks, userId, status) {
 }
 
 // Handle filtering tasks based on user and status
-async function filterTasks() {
+async function filterAllTasks() {
   let userId = filterUsers.value;
   let taskStatus = filterTasks.value;
 
@@ -121,5 +121,5 @@ async function initializePage() {
 // Initialize the page on load
 initializePage();
 
-filterUsers.addEventListener("change", filterTasks);
-filterTasks.addEventListener("change", filterTasks);
+filterUsers.addEventListener("change", filterAllTasks);
+filterTasks.addEventListener("change", filterAllTasks);
