@@ -50,24 +50,32 @@ async function loadCategories() {
 function setupFormSubmission() {
   const form = document.getElementById("newTodoForm");
   form.addEventListener("submit", async (event) => {
-    // Add a listener for when the form is submitted
-    event.preventDefault(); //(page refresh)
+    event.preventDefault();
 
-    const formData = new FormData(form); // Create a FormData object containing all form fields
+    // Create an object with the form data
+    const formData = {
+      userid: document.getElementById("userid").value,
+      category: document.getElementById("category").value,
+      description: document.getElementById("description").value,
+      deadline: document.getElementById("deadline").value,
+      priority: document.getElementById("priority").value
+    };
 
     try {
       const response = await fetch("http://localhost:8083/api/todos", {
-        // Send a request to the API endpoint
         method: "POST",
-        body: formData,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
       });
 
       if (response.ok) {
-        // If the server responded with a success status (200-299)
+        const newTodo = await response.json();
         alert("Todo added successfully!");
-        form.reset(); // Clear all form fields
+        // Redirect to todo_details page with the new todo's ID
+        window.location.href = `todo_details.html?id=${newTodo.id}`;
       } else {
-        // If the server responded with an error status
         alert("Error adding todo");
       }
     } catch (error) {
