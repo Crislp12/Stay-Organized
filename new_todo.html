@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add New Todo</title>
-    <link rel="stylesheet" href="styless/pro.css" />
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    
+    <link rel="stylesheet" href="./styless/pro.css" />
+    
   </head>
   <body>
 
@@ -53,8 +55,8 @@
 
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="new_todo.html">Todo2.0</a></li>
-        <li><a href="todo.html">Todo2.1</a></li>
+        <li><a href="todo.html">Todo2.0</a></li>
+        <li><a href="new_todo.html">Todo2.1</a></li>
       </ul>
     </nav>
     
@@ -65,37 +67,32 @@
 
     <form id="newTodoForm">
       <div class="form-group">
-        <label for="userid">User:</label>
+        <label for="userid">User:</label><br />
         <select id="userid" name="userid" required>
           <option value="">Select User</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label for="category">Category:</label>
+        <label for="category">Category:</label><br />
+
         <select id="category" name="category" required>
           <option value="">Select Category</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label for="description">Description:</label>
+        <label for="description">Description:</label><br />
         <textarea id="description" name="description" required></textarea>
       </div>
-
       <div class="form-group">
-        <label for="deadline">Deadline:</label>
-        <input
-          type="text"
-          id="deadline"
-          name="deadline"
-          placeholder="YYYY-MM-DD"
-          required
-        />
+        <label for="deadline">Deadline:</label><br />
+
+        <input type="text" id="deadline" name="deadline" placeholder="YYYY-MM-DD" required />
       </div>
-
+      <br />
       <div class="form-group">
-        <label for="priority">Priority:</label>
+        <label for="priority">Priority:</label><br />
         <select id="priority" name="priority" required>
           <option value="">Select Priority</option>
           <option value="Low">Low</option>
@@ -103,60 +100,9 @@
           <option value="High">High</option>
         </select>
       </div>
+      <br />
       <button type="submit">Add Todo</button>
     </form>
-
-    <script src="todo.js"></script>
-
-    
-    <footer>
-      <div class="footer-container">
-        <div class="footer-section">
-          <h3>Information</h3>
-          <ul>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Shipping and Delivery</a></li>
-            <li><a href="#">Returns and Exchanges</a></li>
-            <li><a href="#">Cancellation Policy</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms and Conditions</a></li>
-            <li><a href="#">Sitemap</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h3>More</h3>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Product</a></li>
-            <li><a href="#">Story</a></li>
-            <li><a href="#">Journal</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h3>Account</h3>
-          <ul>
-            <li><a href="#">Main Account</a></li>
-            <li><a href="#">Order History</a></li>
-            <li><a href="#">Wishlist</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h3>Sign Up</h3>
-          <p>
-            Subscribe to learn new skills from Cris and stay informed about our
-            design process and updates.
-          </p>
-          <form>
-            <input type="email" placeholder="Enter your email" required />
-            <button type="submit">Subscribe</button>
-          </form>
-        </div>
-      </div>
-    </footer>
 
     <script src="newtodo.js"></script>
 
