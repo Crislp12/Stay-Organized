@@ -4,7 +4,20 @@ body {
   padding: 0;
   background-color: #121212;
   color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
+
+footer {
+  margin-top: auto;
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  
+}
+
 
 .navbar {
   display: flex;
@@ -32,9 +45,7 @@ body {
 
 .nav-links a {
   text-decoration: none;
-
   color: #ffffff;
-
   font-weight: bold;
   padding: 5px 10px;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -51,6 +62,9 @@ section {
   text-align: center;
   color: #ffffff;
 }
+
+
+
 
 /* Footer */
 
@@ -128,7 +142,7 @@ form input::placeholder {
 form button {
   padding: 10px 20px;
   background-color: #f3a953;
-  color: #fff;
+  color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -158,6 +172,7 @@ form button:hover {
   form button {
     width: 100%;
   }
+
   .form-group {
     margin-bottom: 15px;
   }
@@ -171,6 +186,27 @@ form button:hover {
     width: 250px;
     padding: 5px;
   }
+
+footer {
+  background-color: #222;
+  color: #ffffff;
+  padding: 40px 20px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 20px;
+  min-width: 250px;
+}
 
   footer {
     background-color: #222;
