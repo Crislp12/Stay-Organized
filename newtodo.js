@@ -73,7 +73,7 @@ function setupFormSubmission() {
         const newTodo = await response.json();
         alert("Todo added successfully!");
         
-        window.location.href = `todo_details.html?id=${newTodo.id}`;
+        window.location.href = `todo.html`;
       } else {
         alert("Error adding todo");
       }
